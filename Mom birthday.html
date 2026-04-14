@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mummy</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff3f0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Text */
+.card h1 {
+    color: #c1121f;
+}
+.card p {
+    max-width: 420px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Floating text animation (Option 3) */
+.float-text {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* ================= CAKE ================= */
+
+.cake {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Candle */
+.candle {
+    width: 10px;
+    height: 45px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffd166,
+        #ffd166 5px,
+        #ef476f 5px,
+        #ef476f 10px
+    );
+    border-radius: 3px;
+    position: relative;
+    z-index: 5;
+}
+
+.flame {
+    width: 14px;
+    height: 20px;
+    background: radial-gradient(circle, #ffd166 30%, #ff5400 70%);
+    border-radius: 50%;
+    position: absolute;
+    top: -18px;
+    left: -2px;
+    animation: flicker 0.25s infinite alternate;
+}
+
+/* Cake body */
+.cake-body {
+    position: relative;
+    width: 240px;
+}
+
+/* Icing */
+.icing {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background: wheat;
+    border-radius: 18px 18px 0 0;
+    z-index: 3;
+}
+
+/* Layers */
+.layer {
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+    transform: translateY(-120px);
+    animation: dropIn 0.8s ease forwards;
+}
+
+.layer1 {
+    background: #ffafcc;
+    margin-top: 20px; /* hidden under icing */
+    animation-delay: 0.3s;
+}
+
+.layer2 {
+    background: #ffd6a5;
+    animation-delay: 0.9s;
+}
+
+.layer3 {
+    background: #cdb4db;
+    border-radius: 0 0 18px 18px;
+    animation-delay: 1.5s;
+}
+
+/* Plate */
+.plate {
+    width: 280px;
+    height: 18px;
+    background: #ddd;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+/* Animations */
+@keyframes flicker {
+    from { transform: scale(1); }
+    to { transform: scale(1.3); }
+}
+
+@keyframes dropIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🎉 Happy Birthday Mummy 🎉</h1>
+    <p class="float-text">
+        To the woman who fills our lives with love and warmth —<br>
+        Happy Birthday 💖<br>
+        Your care, strength, and kindness make our home a happy place every day.<br>
+        With all our love,<br>
+        Papa, Chinnu & Minnu
+    </p>
+</div>
+
+<div class="cake">
+    <div class="candle">
+        <div class="flame"></div>
+    </div>
+
+    <div class="cake-body">
+        <div class="icing"></div>
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+    </div>
+
+    <div class="plate"></div>
+</div>
+
+</body>
+</html>
